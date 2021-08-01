@@ -26,7 +26,12 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftUIToolz",
-            dependencies: ["SwiftObserver", "SwiftyToolz"],
+            dependencies: [
+                .product(name: "CombineObserver",
+                         package: "SwiftObserver"),
+                "SwiftObserver",
+                "SwiftyToolz"
+            ],
             path: "Code/SwiftUIToolz"
         ),
     ]
