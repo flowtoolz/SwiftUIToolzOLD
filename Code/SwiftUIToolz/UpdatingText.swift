@@ -37,16 +37,19 @@ import Combine
 /// }
 /// ```
 public struct UpdatingText<P: Publisher>: View where P.Output == String, P.Failure == Never {
-    public init(_ publisher: P, modify: ((Text) -> Text)? = nil) {
+    public init(_ publisher: P,
+                initialText: String = "",
+                modify: ((Text) -> Text)? = nil) {
         self.publisher = publisher
         self.modify = modify ?? { $0 }
+        self._text = State(initialValue: initialText)
     }
     
     public var body: some View {
         modify(Text(text)).bind($text, to: publisher)
     }
     
-    @State private var text = ""
+    @State private var text: String
     private let publisher: P
     private let modify: (Text) -> Text
 }
