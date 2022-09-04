@@ -24,8 +24,9 @@ public extension SwiftUI.Color {
             self.init(color)
         case .system(let systemColor):
             self.init(systemColor)
-        case .dynamic(let lightMode, let darkMode):
-            self = .dynamic(lightMode: lightMode, darkMode: darkMode)
+        case .dynamic(let dynamicColor):
+            self = .dynamic(lightMode: dynamicColor.lightMode,
+                            darkMode: dynamicColor.darkMode)
         }
     }
     
@@ -42,12 +43,14 @@ public extension SwiftUI.Color {
         case .gray: self.init(NSColor.systemGray)
         case .secondaryLabel: self.init(NSColor.secondaryLabelColor)
         case .teal: self.init(NSColor.systemTeal)
+        case .accent: self = .accentColor
         }
     }
     
     static func dynamic(lightMode: SwiftyToolz.Color,
                         darkMode: SwiftyToolz.Color) -> SwiftUI.Color {
-        self.init(NSColor.dynamic(lightMode: .init(lightMode), darkMode: .init(darkMode)))
+        .init(NSColor.dynamic(lightMode: .init(lightMode),
+                              darkMode: .init(darkMode)))
     }
 }
 
