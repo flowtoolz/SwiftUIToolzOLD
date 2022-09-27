@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/flowtoolz/SwiftObserver.git",
+            url: "https://github.com/codeface-io/SwiftObserver.git",
             .branch("master")
         ),
         .package(
