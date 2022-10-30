@@ -3,7 +3,7 @@ import SwiftyToolz
 
 public extension View
 {
-    func framePosition(_ frame: Frame) -> some View
+    func framePosition(_ frame: SwiftyToolz.Rectangle) -> some View
     {
         modifier(FramePosition(frame: frame))
     }
@@ -18,7 +18,7 @@ public struct FramePosition: ViewModifier
             .position(x: frame.centerX, y: frame.centerY)
     }
     
-    let frame: Frame
+    let frame: SwiftyToolz.Rectangle
 }
 
 public extension CGPoint
