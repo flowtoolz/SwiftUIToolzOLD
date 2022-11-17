@@ -1,4 +1,4 @@
-// swift-tools-version:5.4.0
+// swift-tools-version:5.7
 
 import PackageDescription
 
@@ -16,11 +16,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/codeface-io/SwiftObserver.git",
-            .branch("master")
+            exact: "7.0.3"
         ),
         .package(
             url: "https://github.com/flowtoolz/SwiftyToolz.git",
-            .branch("master")
+            exact: "0.1.1"
         ),
     ],
     targets: [
