@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "SwiftObserver",
-        "repositoryURL": "https://github.com/flowtoolz/SwiftObserver.git",
-        "state": {
-          "branch": "master",
-          "revision": "e6c65e0f4f138a3f25ba379c45ce6a85e405aac8",
-          "version": null
-        }
-      },
-      {
-        "package": "SwiftyToolz",
-        "repositoryURL": "https://github.com/flowtoolz/SwiftyToolz.git",
-        "state": {
-          "branch": "master",
-          "revision": "fea24d506ed7b12c53a1a1216380c766db19e8c1",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "swiftobserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/codeface-io/SwiftObserver.git",
+      "state" : {
+        "revision" : "bb5d6690201db48ded3a6c7e55c927717846255b",
+        "version" : "7.0.3"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swiftytoolz",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/flowtoolz/SwiftyToolz.git",
+      "state" : {
+        "revision" : "2e62cb659792f508136f27327d48d06c647fc68b",
+        "version" : "0.1.1"
+      }
+    }
+  ],
+  "version" : 2
 }
