@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/codeface-io/SwiftObserver.git",
-            exact: "7.0.3"
+            exact: "7.0.4"
         ),
         .package(
             url: "https://github.com/flowtoolz/SwiftyToolz.git",

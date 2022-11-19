@@ -1,6 +1,7 @@
 import SwiftUI
 import Combine
 import SwiftObserver
+import CombineObserver
 
 /*
 Code below demonstrates how to:
