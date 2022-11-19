@@ -54,7 +54,7 @@ public extension SwiftUI.Color {
     }
 }
 
-extension NSColor {
+public extension NSColor {
     
     convenience init(_ swiftyToolzColor: SwiftyToolz.Color) {
         self.init(red: swiftyToolzColor.red,
@@ -63,8 +63,8 @@ extension NSColor {
                   alpha: swiftyToolzColor.alpha)
     }
     
-    public static func `dynamic`(lightMode: NSColor,
-                                 darkMode: NSColor) -> NSColor {
+    static func `dynamic`(lightMode: NSColor,
+                          darkMode: NSColor) -> NSColor {
         NSColor(name: nil) { appearance in
             switch appearance.name {
             case .aqua,
