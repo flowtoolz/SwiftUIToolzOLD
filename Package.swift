@@ -3,14 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftUIToolz",
+    name: "SwiftUIToolzOLD",
     platforms: [
         .iOS(.v13), .macOS(.v10_15), .tvOS(.v13), .watchOS(.v6)
     ],
     products: [
         .library(
-            name: "SwiftUIToolz",
-            targets: ["SwiftUIToolz"]
+            name: "SwiftUIToolzOLD",
+            targets: ["SwiftUIToolzOLD"]
         ),
     ],
     dependencies: [
@@ -25,14 +25,14 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftUIToolz",
+            name: "SwiftUIToolzOLD",
             dependencies: [
                 .product(name: "CombineObserver",
                          package: "SwiftObserver"),
                 "SwiftObserver",
                 "SwiftyToolz"
             ],
-            path: "Code/SwiftUIToolz"
+            path: "Code"
         ),
     ]
 )
