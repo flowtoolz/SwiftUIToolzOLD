@@ -49,23 +49,27 @@ public extension SwiftUI.Color {
     
     static func dynamic(lightMode: SwiftyToolz.Color,
                         darkMode: SwiftyToolz.Color) -> SwiftUI.Color {
-        .init(NSColor.dynamic(lightMode: .init(lightMode),
-                              darkMode: .init(darkMode)))
+        .init(NSColor(lightMode: lightMode,
+                      darkMode: darkMode))
     }
 }
 
 public extension NSColor {
     
-    convenience init(_ swiftyToolzColor: SwiftyToolz.Color) {
-        self.init(red: swiftyToolzColor.red,
-                  green: swiftyToolzColor.green,
-                  blue: swiftyToolzColor.blue,
-                  alpha: swiftyToolzColor.alpha)
+    convenience init(_ dynamicColor: SwiftyToolz.DynamicColor) {
+        self.init(lightMode: dynamicColor.lightMode,
+                  darkMode: dynamicColor.darkMode)
     }
     
-    static func `dynamic`(lightMode: NSColor,
-                          darkMode: NSColor) -> NSColor {
-        NSColor(name: nil) { appearance in
+    convenience init(lightMode: SwiftyToolz.Color,
+                     darkMode: SwiftyToolz.Color) {
+        self.init(lightMode: NSColor(lightMode),
+                  darkMode: NSColor(darkMode))
+    }
+    
+    convenience init(lightMode: NSColor,
+                     darkMode: NSColor) {
+        self.init(name: nil) { appearance in
             switch appearance.name {
             case .aqua,
                 .vibrantLight,
@@ -81,6 +85,13 @@ public extension NSColor {
                 return lightMode
             }
         }
+    }
+    
+    convenience init(_ swiftyToolzColor: SwiftyToolz.Color) {
+        self.init(red: swiftyToolzColor.red,
+                  green: swiftyToolzColor.green,
+                  blue: swiftyToolzColor.blue,
+                  alpha: swiftyToolzColor.alpha)
     }
 }
 #endif
