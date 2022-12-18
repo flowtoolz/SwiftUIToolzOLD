@@ -1,7 +1,8 @@
 #if os(macOS)
 import SwiftUI
 
-public extension NSApplication
+@available(macOS 11.0, *)
+public extension App
 {
     func toggleSidebar()
     {
@@ -9,6 +10,11 @@ public extension NSApplication
         NSApp.sendAction(#selector(NSSplitViewController.toggleSidebar(_:)),
                          to: nil,
                          from: nil)
+    }
+    
+    func toggleFullscreen()
+    {
+        NSApp.keyWindow?.toggleFullScreen(nil)
     }
 }
 #endif
