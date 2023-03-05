@@ -30,7 +30,7 @@ public extension SwiftUI.Color {
         }
     }
     
-    init(_ systemColor: UXColor.System) {
+    init(_ systemColor: SystemColor) {
         switch systemColor {
         case .text: self.init(NSColor.textColor)
         case .label: self.init(NSColor.labelColor)
