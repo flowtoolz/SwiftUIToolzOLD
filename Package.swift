@@ -16,11 +16,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/codeface-io/SwiftObserver.git",
-            exact: "7.0.6"
+            exact: "7.0.7"
         ),
         .package(
             url: "https://github.com/flowtoolz/SwiftyToolz.git",
-            exact: "0.3.0"
+            exact: "0.4.0"
         ),
     ],
     targets: [
