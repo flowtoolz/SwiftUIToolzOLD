@@ -25,8 +25,7 @@ public extension SwiftUI.Color {
         case .system(let systemColor):
             self.init(systemColor)
         case .dynamic(let dynamicColor):
-            self = .dynamic(lightMode: dynamicColor.lightMode,
-                            darkMode: dynamicColor.darkMode)
+            self.init(dynamicColor)
         }
     }
     
@@ -45,6 +44,11 @@ public extension SwiftUI.Color {
         case .teal: self.init(NSColor.systemTeal)
         case .accent: self = .accentColor
         }
+    }
+    
+    init(_ dynamicColor: DynamicColor) {
+        self = .dynamic(lightMode: dynamicColor.lightMode,
+                        darkMode: dynamicColor.darkMode)
     }
     
     static func dynamic(lightMode: SwiftyToolz.Color,
